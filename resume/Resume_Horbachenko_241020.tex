@@ -1,0 +1,206 @@
+\documentclass[letterpaper,11pt]{article}
+
+%-----------------------------------------------------------
+\usepackage[empty]{fullpage}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{color}
+\definecolor{mygrey}{gray}{0.80}
+\definecolor{linkblue}{RGB}{26, 13, 171}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins to 0.5in on all sides
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{7.1in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+\begin{document}
+
+\begin{tabular*}{7.6in}{l@{\extracolsep{\fill}}r}
+	\textbf{\Large Vasyl Horbachenko}  \\
+	Kyiv, Ukraine & vasyl.horbachenko@gmail.com \\
+\end{tabular*}
+\\
+
+\vspace{0.1in}
+
+\resheading{Skills}
+
+\begin{description}
+	\item[Languages:]
+		C\#, C++, C, HLSL, MSIL, Lua, Python, Swift, Java, Lisp
+	\item[Platforms:]
+		Desktop (Unity, OpenGL), Mobile (iOS, Crossplatform)
+	\item[Applications:]
+		Unity Editor, Blender, git, IntelliJ platform, VS, PlantUML, Jira, Gitlab, doxygen
+	\item[Language:]
+		English (Advanced), Ukrainian (Native), Russian (Native)
+	\item[Miscellaneous:]
+		git Flow, testing (unit, UI, integration), UML, CI
+\end{description}
+
+
+\resheading{Work Experience}
+\begin{itemize}
+	\item
+		\ressubheading{Self-employed}{Lviv}{Independent Game Developer}{December 2019 - Present}
+
+		Implementing ideas and working on learning projects revolving around game development and 3D graphics (see \textit{Other Notable Projects} down below).
+		\begin{itemize}
+				\resitem{Development using Unity Engine}
+				\resitem{Reverse-engineering Unity games}
+				\resitem{OpenGL and C++ game engine development, scripting language integration (Lua)}
+		\end{itemize}
+
+	\item
+		\ressubheading{Globallogic}{Lviv}{Flutter developer}{Aug 2019 - December 2019}
+		
+		Working on a number of ``proof-of-concepts'' with \textbf{Dart}/\textbf{Flutter}, mainly revolving around Bluetooth and native plugin communication.
+		\begin{itemize}
+				\resitem{Adopting existing BLE communication code as a Flutter plugin, designing communication layer between native and cross-platform}
+				\resitem{Making a flutter application that uses forementioned plugin to communicate with Bluetooth device}
+		\end{itemize}
+
+	\item
+		\ressubheading{Globallogic}{Lviv}{iOS Developer}{Jul 2017 - Aug 2019}
+
+		Developer (and occasional backing team lead) of a large healthcare-related Bluetooth application.
+		\begin{itemize}
+				\resitem{Coordination between 4 teams in different locations; the application was a \textit{``connecting piece''} bringing everything together}
+				\resitem{Full blown QA: automated tests, unit tests, integration tests \& manual runs}
+				\resitem{Mobile team consisted of 10+ people (around 50-70 in total for the whole project)}
+		\end{itemize}
+
+		My responsibilities on the project:
+		\begin{itemize}
+				\resitem{Core \textbf{BLE} interactions runtime architecture \& implementation}
+				\resitem{Firmware-over-the-air implementation, sending binary images over BLE using custom TCP-like protocol}
+				\resitem{Bluetooth communication debugging using \textbf{Frontline BLE sniffer}}
+				\resitem{Separating the application codebase into an \textbf{SDK} for a family of medical devices}
+				\resitem{Occasional backing Team Leading and team coordination}
+		\end{itemize}
+\pagebreak
+	\item
+		\ressubheading{OpenDrive}{Remote}{macOS Developer}{Dec 2015 - Jan 2017}
+
+		Developer of a cloud storage client application, providing FS-level access to the cloud drive (similar to \textit{Apple's iCloud}).
+		\begin{itemize}
+				\resitem{Massive rewrite to bring the application to modern standards (old codebase was compromised by macOS \textit{System Integrity Protection})}
+				\resitem{Custom virtual filesystem built upon \textbf{osxfuse}}
+				\resitem{Integration with Finder via \textbf{Apple's Extension APIs}}
+				\resitem{\textit{rsync-like} application to run in the background and synchronize between local and cloud directories}
+		\end{itemize}
+
+	\item
+		\ressubheading{StarOfService}{Remote}{PHP Developer}{Sep 2014 - Jun 2015}
+
+		Backend server developer of a web service.
+		\begin{itemize}
+				\resitem{Lots of backend code profling \& optimizations, \textbf{memcached} introduction to make page generation faster}
+				\resitem{Custom \textbf{Symfony \& Doctrine} patches to support localization and internationalization (the project was built upon Symfony 1.4)}
+				\resitem{Leading internationalization development team consisting of 3 developers}
+		\end{itemize}
+
+	\item
+		\ressubheading{Web Production, outsource}{Chernigiv}{PHP Developer}{Apr 2012 - Jul 2012}
+
+		Internship program during the university summer break.
+		\begin{itemize}
+				\resitem{Worked on a large city portal}
+				\resitem{Web full-stack development using internal framework}
+		\end{itemize}
+		
+\end{itemize}
+
+\resheading{Other Notable Projects}
+\begin{itemize}
+	\item
+		\ressubheading{OsaVR}{Opensource}{Creator}{August 2020 - Present}
+
+		\href{https://github.com/shdwp/osavr}{\textcolor{linkblue}{\underline{Open-source Unity application}}} to simulate \textit{9K33M Osa SAM System} with target of making a VR game out of it.
+		\begin{itemize}
+				\resitem{Unity HDRP project with custom assets}
+				\resitem{X-Band Radar real time simulation with radar cross-section approximation based on target mesh, all running on GPU as a custom renderer pass}
+				\resitem{Lower-level plugins written in C for GPU rendered radar images processing, running in separate threads}
+				\resitem{Custom shaders for instruments made with both Shader Graph and HLSL}
+		\end{itemize}
+
+	\item
+		\ressubheading{openrunner}{Opensource}{Creator}{June 2020 - Present}
+		
+		\href{https://github.com/shdwp/openrunner}{\textcolor{linkblue}{\underline{openrunner}}} is a open-source OpenGL implementation of collectible card game \textit{Android: Netrunner}, currently under development.
+		\begin{itemize}
+				\resitem{Game engine written in C++, with Lua API for the game logic implementation}
+				\resitem{Fully cross platform source code}
+		\end{itemize}
+
+	\item
+		\ressubheading{UIExtenderLib for M\&B Bannerlord II}{Opensource}{Creator, maintainer}{April 2020 - Present}
+
+		\href{https://github.com/shdwp/UIExtenderLib}{\textcolor{linkblue}{\underline{Library}}} for modification developers to solve problems of multiple mods altering same game files.
+		\begin{itemize}
+				\resitem{Application code reverse-engineering}
+				\resitem{MSIL patches made to be resursively added by each user of the library}
+				\resitem{Runtime assembly builder to be used with Harmony}
+		\end{itemize}
+
+	\item
+		\ressubheading{Dynamic campaign engine for Digital Combat Simulator}{Opensource}{Creator, maintainer}{May 2018 - Present}
+
+		\href{https://github.com/shdwp/dcs_liberation}{\textcolor{linkblue}{\underline{DCS Liberation}}} windows standalone application that generates mission files for aircraft simulator. Written in Python.
+		\begin{itemize}
+				\resitem{A community project, currently counting 2 maintainers and 4 contributors}
+				\resitem{Steady number of active users, total 70k hits on bulletin board thread}
+		\end{itemize}
+
+	\item
+		\ressubheading{PlayStation Vita Homebrew Development}{Opensource}{Creator, maintainer}{2016}
+
+
+		Participated in development of \href{https://github.com/xyzz/vita-moonlight}{\textcolor{linkblue}{\underline{vita-moonlight}}}, an NVIDIA moonlight streaming client for PlayStation Vita:
+		\begin{itemize}
+				\resitem{Improvements over base version, most notably UI and user configuration options}
+				\resitem{Maintaining, code peer-reviewing}
+				\resitem{\textbf{C}, \textbf{stdlib} and \textbf{Sony's SCE lib}}
+		\end{itemize}
+
+		Created \href{https://github.com/shdwp/advremap}{\textcolor{linkblue}{\underline{advremap}}}, OS plugin to remap the hardware keys and create virtual touchscreen keys.
+		\begin{itemize}
+				\resitem{\textbf{taihen} function import hooks}
+				\resitem{\textbf{C}, \textbf{stdlib} and \textbf{Sony's SCE lib}}
+		\end{itemize}
+\end{itemize}
+
+\resheading{Education}
+\begin{itemize}
+\item
+	\ressubheading{Chernigiv State Technological University}{Chernigiv, Ukraine}{Computer Science, Bachelor}{Sep. 2012 - May. 2017}
+\end{itemize}
+
+\resheading{Awards}
+\begin{itemize}
+	\item
+		\ressubheading{Junior Academy of Sciences of Ukraine Scholarship}{Kyiv, JASU}{Computer Science}{2010-2012}
+
+		Scholarship from \href{http://man.gov.ua/en}{\textcolor{linkblue}{\underline{JASU}}}, a Junior section of Ukrainian Academy of Sciences (during high school); works related to IT integration into the education process.
+	\item
+		\ressubheading{Product copyright registration certificate}{Kyiv, JASU}{Certificate \textnumero40491}{2014}
+
+		Was also awarded a copyright registration certificate as a result of my involvement in JASU.
+\end{itemize}
+\end{document}

@@ -5,11 +5,15 @@
 \usepackage{hyperref}
 \usepackage{textcomp}
 \usepackage{color}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{float}
 \definecolor{mygrey}{gray}{0.80}
 \definecolor{linkblue}{RGB}{26, 13, 171}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
+\graphicspath { {.} }
 
 % Adjust margins to 0.5in on all sides
 \addtolength{\oddsidemargin}{-0.5in}
@@ -21,7 +25,7 @@
 %-----------------------------------------------------------
 %Custom commands
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+	\newcommand{\resheading}[1]{{\vspace{.2in} \large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
 \newcommand{\ressubheading}[4]{
 \begin{tabular*}{7.1in}{l@{\extracolsep{\fill}}r}
 		\textbf{#1} & #2 \\
@@ -31,40 +35,56 @@
 
 \begin{document}
 
-\begin{tabular*}{7.6in}{l@{\extracolsep{\fill}}r}
-	\textbf{\Large Vasyl Horbachenko}  \\
-	Lviv, Ukraine & vasyl.horbachenko@gmail.com \\
-\end{tabular*}
-\\
+\begin{minipage}{.70\linewidth}
+	\begin{center}
+		\textbf{\Large Vasyl Horbachenko} \\
+		Frankfurt am Main, Germany \\
+		vasyl.horbachenko@gmail.com \\
+		\href{https://shdwp.github.io/about/}{\textcolor{linkblue}{\underline{https://shdwp.github.io/about/}}} \\
 
-\vspace{0.1in}
-
-\resheading{Skills}
-
+		\vspace{0.2in}
+		\resheading{Skills}
+		\begin{description}
+			\item[Languages:]
+				C\#, C++, C, HLSL, MSIL, Lua, Python, Lisp
+			\item[Platforms:]
+				Desktop (Unity, OpenGL), Mobile (iOS, Crossplatform)
+		\end{description}
+	\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{.26\linewidth}
+	\begin{flushright}
+		\fbox{\includegraphics[scale=0.12]{pic}}
+	\end{flushright}
+\end{minipage}
 \begin{description}
-	\item[Languages:]
-		C\#, C++, C, HLSL, MSIL, Lua, Python, Lisp
-	\item[Platforms:]
-		Desktop (Unity, OpenGL), Mobile (iOS, Crossplatform)
-	\item[Applications:]
-		Unity Editor, Blender, git, IntelliJ platform, VS, PlantUML, Jira, Gitlab, doxygen
 	\item[Language:]
 		English (Advanced), Ukrainian (Native), Russian (Native)
+	\item[Applications:]
+		Unity Editor, Blender, git, IntelliJ, Visual Studio, PlantUML, Jira, Gitlab, doxygen
 	\item[Miscellaneous:]
 		git Flow, testing (unit, UI, integration), UML, CI
 \end{description}
 
+\resheading{Education}
+\begin{itemize}
+\item
+	\ressubheading{Chernigiv State Technological University}{Chernigiv, Ukraine}{Computer Science, Bachelor}{Sep. 2012 - May. 2017}
+\end{itemize}
 
 \resheading{Work Experience}
 \begin{itemize}
 	\item
 		\ressubheading{Build1}{Remote}{Unity Developer}{December 2020 - Present}
 
-		Working with a team of game designers \& programmers to develop a number of video game prototypes.
+		Working with a team of game designers \& programmers on various projects.
 		\begin{itemize}
-			\resitem{Experience with \textbf{il2cpp} and \textbf{webgl}}
-			\resitem{Lots of script optimization due to \textbf{webgl} nature}
-			\resitem{Multiplayer code development}
+				\resitem{Multiplayer code development}
+				\resitem{Custom shading \& rendering pipelines}
+				\resitem{Experience with \textbf{il2cpp} and \textbf{webgl}}
+				\resitem{Lots of optimization work due low-end devices targeted}
+				\resitem{Contributions to in-house MVC framework}
 		\end{itemize}
 
 	\item
@@ -86,6 +106,8 @@
 				\resitem{Making a flutter application that uses forementioned plugin to communicate with Bluetooth device}
 		\end{itemize}
 
+	\pagebreak
+
 	\item
 		\ressubheading{Globallogic}{Lviv}{iOS Developer}{Jul 2017 - Aug 2019}
 
@@ -104,39 +126,21 @@
 				\resitem{Separating the application codebase into an \textbf{SDK} for a family of medical devices}
 				\resitem{Occasional backing Team Leading and team coordination}
 		\end{itemize}
-\pagebreak
-	\item
-		\ressubheading{OpenDrive}{Remote}{macOS Developer}{Dec 2015 - Jan 2017}
-
-		Developer of a cloud storage client application, providing FS-level access to the cloud drive (similar to \textit{Apple's iCloud}).
-		\begin{itemize}
-				\resitem{Massive rewrite to bring the application to modern standards (old codebase was compromised by macOS \textit{System Integrity Protection})}
-				\resitem{Custom virtual filesystem built upon \textbf{osxfuse}}
-				\resitem{Integration with Finder via \textbf{Apple's Extension APIs}}
-				\resitem{\textit{rsync-like} application to run in the background and synchronize between local and cloud directories}
-		\end{itemize}
-
-	\item
-		\ressubheading{StarOfService}{Remote}{PHP Developer}{Sep 2014 - Jun 2015}
-
-		Backend server developer of a web service.
-		\begin{itemize}
-				\resitem{Lots of backend code profling \& optimizations, \textbf{memcached} introduction to make page generation faster}
-				\resitem{Custom \textbf{Symfony \& Doctrine} patches to support localization and internationalization (the project was built upon Symfony 1.4)}
-				\resitem{Leading internationalization development team consisting of 3 developers}
-		\end{itemize}
-
-	\item
-		\ressubheading{Web Production, outsource}{Chernigiv}{PHP Developer}{Apr 2012 - Jul 2012}
-
-		Internship program during the university summer break.
-		\begin{itemize}
-				\resitem{Worked on a large city portal}
-				\resitem{Web full-stack development using internal framework}
-		\end{itemize}
-		
 \end{itemize}
 
+\resheading{Awards}
+\begin{itemize}
+	\item
+		\ressubheading{Junior Academy of Sciences of Ukraine Scholarship}{Kyiv, JASU}{Computer Science}{2010-2012}
+
+		Scholarship from \href{http://man.gov.ua/en}{\textcolor{linkblue}{\underline{JASU}}}, a Junior section of Ukrainian Academy of Sciences (during high school); works related to IT integration into the education process.
+	\item
+		\ressubheading{Product copyright registration certificate}{Kyiv, JASU}{Certificate \textnumero40491}{2014}
+
+		Was also awarded a copyright registration certificate as a result of my involvement in JASU.
+\end{itemize}
+
+\iffalse
 \resheading{Other Notable Projects}
 \begin{itemize}
 	\item
@@ -195,22 +199,6 @@
 				\resitem{\textbf{C}, \textbf{stdlib} and \textbf{Sony's SCE lib}}
 		\end{itemize}
 \end{itemize}
+\fi
 
-\resheading{Education}
-\begin{itemize}
-\item
-	\ressubheading{Chernigiv State Technological University}{Chernigiv, Ukraine}{Computer Science, Bachelor}{Sep. 2012 - May. 2017}
-\end{itemize}
-
-\resheading{Awards}
-\begin{itemize}
-	\item
-		\ressubheading{Junior Academy of Sciences of Ukraine Scholarship}{Kyiv, JASU}{Computer Science}{2010-2012}
-
-		Scholarship from \href{http://man.gov.ua/en}{\textcolor{linkblue}{\underline{JASU}}}, a Junior section of Ukrainian Academy of Sciences (during high school); works related to IT integration into the education process.
-	\item
-		\ressubheading{Product copyright registration certificate}{Kyiv, JASU}{Certificate \textnumero40491}{2014}
-
-		Was also awarded a copyright registration certificate as a result of my involvement in JASU.
-\end{itemize}
 \end{document}

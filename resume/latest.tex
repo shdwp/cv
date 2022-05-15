@@ -4,16 +4,28 @@
 \usepackage[empty]{fullpage}
 \usepackage{hyperref}
 \usepackage{textcomp}
-\usepackage{color}
+\usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{float}
-\definecolor{mygrey}{gray}{0.80}
-\definecolor{linkblue}{RGB}{26, 13, 171}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 \graphicspath { {.} }
+
+\iftrue
+	\definecolor{title_bg}{RGB}{66, 66, 70}
+	\definecolor{link_fg}{RGB}{38, 152, 186}
+	\definecolor{bg}{RGB}{0, 0, 0}
+	\definecolor{fg}{RGB}{255, 255, 255}
+\else
+	\definecolor{title_bg}{gray}{0.80}
+	\definecolor{link_fg}{RGB}{26, 13, 171}
+	\definecolor{bg}{RGB}{255, 255, 255}
+	\definecolor{fg}{RGB}{0, 0, 0}
+\fi
+
+\pagecolor{bg}
 
 % Adjust margins to 0.5in on all sides
 \addtolength{\oddsidemargin}{-0.5in}
@@ -25,7 +37,7 @@
 %-----------------------------------------------------------
 %Custom commands
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-	\newcommand{\resheading}[1]{{\vspace{.2in} \large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+	\newcommand{\resheading}[1]{{\vspace{.2in} \large \colorbox{title_bg}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
 \newcommand{\ressubheading}[4]{
 \begin{tabular*}{7.1in}{l@{\extracolsep{\fill}}r}
 		\textbf{#1} & #2 \\
@@ -33,6 +45,7 @@
 \end{tabular*}\vspace{-6pt}}
 %-----------------------------------------------------------
 
+\color{fg}
 \begin{document}
 
 \begin{minipage}{.70\linewidth}
@@ -40,7 +53,7 @@
 		\textbf{\Large Vasyl Horbachenko} \\
 		Frankfurt am Main, Germany \\
 		vasyl.horbachenko@gmail.com \\
-		\href{https://shdwp.github.io/about/}{\textcolor{linkblue}{\underline{https://shdwp.github.io/about/}}} \\
+		\href{https://shdwp.github.io/about/}{\textcolor{link_fg}{\underline{https://shdwp.github.io/about/}}} \\
 
 		\vspace{0.2in}
 		\resheading{Skills}
@@ -133,7 +146,7 @@
 	\item
 		\ressubheading{Junior Academy of Sciences of Ukraine Scholarship}{Kyiv, JASU}{Computer Science}{2010-2012}
 
-		Scholarship from \href{http://man.gov.ua/en}{\textcolor{linkblue}{\underline{JASU}}}, a Junior section of Ukrainian Academy of Sciences (during high school); works related to IT integration into the education process.
+		Scholarship from \href{http://man.gov.ua/en}{\textcolor{link_fg}{\underline{JASU}}}, a Junior section of Ukrainian Academy of Sciences (during high school); works related to IT integration into the education process.
 	\item
 		\ressubheading{Product copyright registration certificate}{Kyiv, JASU}{Certificate \textnumero40491}{2014}
 
@@ -146,7 +159,7 @@
 	\item
 		\ressubheading{OsaVR}{Opensource}{Creator}{August 2020 - Present}
 
-		\href{https://github.com/shdwp/osavr}{\textcolor{linkblue}{\underline{Open-source Unity application}}} to simulate \textit{9K33M Osa SAM System} with target of making a VR game out of it.
+		\href{https://github.com/shdwp/osavr}{\textcolor{link_fg}{\underline{Open-source Unity application}}} to simulate \textit{9K33M Osa SAM System} with target of making a VR game out of it.
 		\begin{itemize}
 				\resitem{Unity HDRP project with custom assets}
 				\resitem{X-Band Radar real time simulation with radar cross-section approximation based on target mesh, all running on GPU as a custom renderer pass}
@@ -157,7 +170,7 @@
 	\item
 		\ressubheading{openrunner}{Opensource}{Creator}{June 2020 - Present}
 		
-		\href{https://github.com/shdwp/openrunner}{\textcolor{linkblue}{\underline{openrunner}}} is a open-source OpenGL implementation of collectible card game \textit{Android: Netrunner}.
+		\href{https://github.com/shdwp/openrunner}{\textcolor{link_fg}{\underline{openrunner}}} is a open-source OpenGL implementation of collectible card game \textit{Android: Netrunner}.
 		\begin{itemize}
 				\resitem{Game engine written in C++, with Lua API for the game logic implementation}
 				\resitem{Fully cross platform source code}
@@ -166,7 +179,7 @@
 	\item
 		\ressubheading{UIExtenderLib for M\&B Bannerlord II}{Opensource}{Creator, maintainer}{April 2020 - Present}
 
-		\href{https://github.com/shdwp/UIExtenderLib}{\textcolor{linkblue}{\underline{Library}}} for modification developers to solve problems of multiple mods altering same game files.
+		\href{https://github.com/shdwp/UIExtenderLib}{\textcolor{link_fg}{\underline{Library}}} for modification developers to solve problems of multiple mods altering same game files.
 		\begin{itemize}
 				\resitem{Application code reverse-engineering}
 				\resitem{MSIL patches made to be resursively added by each user of the library}
@@ -176,7 +189,7 @@
 	\item
 		\ressubheading{Dynamic campaign engine for Digital Combat Simulator}{Opensource}{Creator, maintainer}{May 2018 - Present}
 
-		\href{https://github.com/shdwp/dcs_liberation}{\textcolor{linkblue}{\underline{DCS Liberation}}} windows standalone application that generates mission files for aircraft simulator. Written in Python.
+		\href{https://github.com/shdwp/dcs_liberation}{\textcolor{link_fg}{\underline{DCS Liberation}}} windows standalone application that generates mission files for aircraft simulator. Written in Python.
 		\begin{itemize}
 				\resitem{A community project, currently counting 2 maintainers and 4 contributors}
 				\resitem{Steady number of active users, total 70k hits on bulletin board thread}
@@ -186,14 +199,14 @@
 		\ressubheading{PlayStation Vita Homebrew Development}{Opensource}{Creator, maintainer}{2016}
 
 
-		Participated in development of \href{https://github.com/xyzz/vita-moonlight}{\textcolor{linkblue}{\underline{vita-moonlight}}}, an NVIDIA moonlight streaming client for PlayStation Vita:
+		Participated in development of \href{https://github.com/xyzz/vita-moonlight}{\textcolor{link_fg}{\underline{vita-moonlight}}}, an NVIDIA moonlight streaming client for PlayStation Vita:
 		\begin{itemize}
 				\resitem{Improvements over base version, most notably UI and user configuration options}
 				\resitem{Maintaining, code peer-reviewing}
 				\resitem{\textbf{C}, \textbf{stdlib} and \textbf{Sony's SCE lib}}
 		\end{itemize}
 
-		Created \href{https://github.com/shdwp/advremap}{\textcolor{linkblue}{\underline{advremap}}}, OS plugin to remap the hardware keys and create virtual touchscreen keys.
+		Created \href{https://github.com/shdwp/advremap}{\textcolor{link_fg}{\underline{advremap}}}, OS plugin to remap the hardware keys and create virtual touchscreen keys.
 		\begin{itemize}
 				\resitem{\textbf{taihen} function import hooks}
 				\resitem{\textbf{C}, \textbf{stdlib} and \textbf{Sony's SCE lib}}
